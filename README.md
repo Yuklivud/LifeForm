@@ -1,2 +1,2 @@
 # LifeForm
-JavaRushModule2_Project
+Thread project
