@@ -1,6 +1,6 @@
-package Organisms.Animals.Predators;
+package Organisms.Animals.Herbivores;
 
-public class Fox implements Predator{
+public class Caterpillar implements Herbivore{
     @Override
     public void eat() {
 
@@ -8,7 +8,7 @@ public class Fox implements Predator{
 
     @Override
     public void move() {
-        System.out.println("Fox moved");
+
     }
 
     @Override
