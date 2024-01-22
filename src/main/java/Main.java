@@ -1,6 +1,13 @@
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
 public class Main {
     public static void main(String[] args) {
-        Runner runner = new Runner();
-        runner.work();
+        ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
+        executorService.scheduleAtFixedRate(new Runner(), 0, 5, TimeUnit.SECONDS);
+//        Runner runner = new Runner();
+//        runner.run();
     }
 }
