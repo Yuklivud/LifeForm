@@ -22,10 +22,10 @@ public class Eat {
         HashMap<Class<? extends Organism>, Integer> mapFromOdds = predatorOdds.get(organismClass);
         try{
             for(Map.Entry<Class<? extends Organism>, Integer> entry : mapFromCollection.entrySet()){
-                if(entry.getValue() > 0){
+                if(entry.getValue() > 0 ){
                     int huntOdd = ThreadLocalRandom.current().nextInt(101);
                     int oddsFromEntry = mapFromOdds.get(entry.getKey());
-                    if(huntOdd >= oddsFromEntry){
+                    if(huntOdd > oddsFromEntry){
                         Animal animal = (Animal) organismClass.getDeclaredConstructor().newInstance();
                         Class<? extends Organism> hunted = entry.getKey();
                         Animal huntedAnimal = (Animal) hunted.getDeclaredConstructor().newInstance();
@@ -44,10 +44,10 @@ public class Eat {
 
         try{
             for(Map.Entry<Class<? extends Organism>, Integer> entry : mapFromCollection.entrySet()){
-                if(entry.getValue() > 0){
+                if(entry.getValue() > 0 ){
                     int huntOdd = ThreadLocalRandom.current().nextInt(101);
                     int oddsFromEntry = mapFromOdds.get(entry.getKey());
-                    if(huntOdd >= oddsFromEntry){
+                    if(huntOdd > oddsFromEntry){
                         Animal animal = (Animal) organismClass.getDeclaredConstructor().newInstance();
                         Class<? extends Organism> hunted = entry.getKey();
                         Animal huntedAnimal = (Animal) hunted.getDeclaredConstructor().newInstance();

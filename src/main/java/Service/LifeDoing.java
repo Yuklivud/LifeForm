@@ -32,7 +32,6 @@ public class LifeDoing {
             for (Map.Entry<Class<? extends Organism>, Integer> innerEntry : innerMap.entrySet()) {
                 if (innerEntry.getValue() > 0 && innerEntry.getKey() != Grass.class) {
                     Class<? extends Organism> animalClass = innerEntry.getKey();
-
                     for (int i = 0; i < innerEntry.getValue(); i++) {
                         try {
                             Animal animal = (Animal) animalClass.getDeclaredConstructor().newInstance();
