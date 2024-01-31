@@ -1,22 +1,31 @@
-import Organisms.Animals.Animal;
 import Service.Initialization;
+import Service.LifeDoing;
 import Service.View;
 import Organisms.Organism;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Runner implements Runnable{
+public class Runner implements Runnable {
     public Map<Integer, HashMap<Class<? extends Organism>, Integer>> collection = new HashMap<>();
+    public HashMap<Class<? extends Organism>, Integer> collectionToView = new HashMap<>();
     public int cellsNumber = 2_000;
+    public LifeDoing lf = new LifeDoing(collection);
+    public View view = new View();
+    public int counter = 0;
 
+    // Init block
     {
+        System.out.println("Initialization");
         Initialization initialization = new Initialization();
         initialization.initSymbols(collection, cellsNumber);
     }
+
     @Override
     public void run() {
-        View view = new View();
-        view.show(collection);
+        lf.simulation(collectionToView);
+        System.out.println("Life cycle  = " + counter + "\n");
+        view.show(collectionToView);
+        counter++;
     }
 }
