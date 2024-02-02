@@ -24,7 +24,8 @@ public class Runner implements Runnable {
     @Override
     public void run() {
         lf.simulation(collectionToView);
-        System.out.println("Life cycle  = " + counter + "\n");
+        System.out.println("\nTotal amount of animals.");
+        System.out.println("Round  = " + counter + "\n");
         view.show(collectionToView);
         counter++;
     }
